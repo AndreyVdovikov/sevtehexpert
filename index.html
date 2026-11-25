@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Севтехэксперт — независимая экспертиза</title>
+<link rel="canonical" href="https://sevtehexpert.ru/">
+<link rel="icon" href="logo.png">
+<meta name="description" content="Независимая строительная экспертиза и автоэкспертиза: после залива, некачественного ремонта, ДТП. Севастополь, Крым, Краснодарский край, Москва, Санкт-Петербург.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: строгий и уверенный, как печать на заключении — много воздуха, ничего лишнего
+   IDEA: фирменный бланк экспертной организации: синяя шапка с гербом, чистые поля, итог в рамке
+   PICTURE: тёмно-синий первый экран с белой эмблемой-водяным знаком и карточкой заявки
+   COLOUR and TYPE: синий логотипа #0c61ab, глубокий #0a2a4d, лёд #f2f7fc, белый; Manrope 800 / 500
+   LAYOUT: верхняя строка контактов, меню, герой, полоса доверия, услуги, этапы, преимущества, отзывы, галерея, цены, FAQ, заявка, подвал с городами */
+:root{color-scheme:light dark;
+--blue:#0c61ab;--blue2:#0a4f8f;--sky:#5aa9ec;--navy:#0a2a4d;--navy2:#071d36;
+--bg:light-dark(#ffffff,#081a2f);--ice:light-dark(#f2f7fc,#0c2340);--card:light-dark(#ffffff,#0f2847);
+--ink:light-dark(#0d1b2a,#e9f0f8);--mute:light-dark(#5a6b7f,#a3b6cb);--line:light-dark(#e1eaf4,#1c3a5e)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:90px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+h1,h2,h3{line-height:1.12;text-wrap:balance;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(34px,4.4vw,54px);font-weight:800}h2{font-size:clamp(28px,3vw,40px);font-weight:800}h3{font-size:19px;font-weight:700}
+p{margin:0 0 1em}a{color:var(--blue)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(4vw,16px)}
+.band{padding:clamp(56px,7vw,96px) 0}
+.ice{background:var(--ice)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.head p{color:var(--mute);max-width:54ch;margin:0;font-size:17px}
+.head h2{margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:12px;border:0;font:700 16px Manrope,sans-serif;cursor:pointer;text-decoration:none;background:var(--blue);color:#fff;transition:background .2s,transform .2s}
+.btn:hover{background:var(--blue2);transform:translateY(-1px)}
+.btn.light{background:#fff;color:var(--navy)}.btn.light:hover{background:#e6f0fa}
+.btn.line{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #ffffff55}.btn.line:hover{box-shadow:inset 0 0 0 2px #fff}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+button,input,select,textarea{font-family:Manrope,system-ui,sans-serif}
+svg.i{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* верхняя строка и меню */
+.top{background:var(--navy2);color:#b9cce0;font-size:14px}
+.top .wrap{display:flex;gap:22px;align-items:center;min-height:40px;flex-wrap:wrap}
+.top a{color:#dce8f5;text-decoration:none;display:inline-flex;gap:6px;align-items:center}.top a:hover{color:#fff}
+.top .sp{margin-left:auto}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;min-height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);margin-right:auto}
+.brand img{width:50px;height:50px;border-radius:50%;background:#fff}
+.brand b{display:block;font-size:18px;font-weight:800;letter-spacing:.04em;color:light-dark(var(--blue),#fff);line-height:1.1}
+.brand small{color:var(--mute);font-size:13px;font-weight:500}
+.links{display:flex;gap:26px}.links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}.links a:hover{color:var(--blue)}
+.city{position:relative}
+.city>button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 15px Manrope,sans-serif;cursor:pointer}
+.city>button svg{color:var(--blue)}
+.city .menu{display:none;position:absolute;right:0;top:54px;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px #0a2a4d33;width:min(560px,92vw);z-index:30;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 18px}
+.city.open .menu{display:grid}
+.city .menu h4{margin:0 0 6px;font-size:12px;color:var(--mute);font-weight:700;letter-spacing:.02em}
+.city .menu button{display:block;width:100%;text-align:left;min-height:38px;border:0;background:none;color:var(--ink);font:500 15px Manrope,sans-serif;padding:0 10px;border-radius:8px;cursor:pointer}
+.city .menu button:hover{background:var(--ice)}.city .menu button[aria-current=true]{background:var(--blue);color:#fff}
+.burger{display:none}
+
+/* герой */
+.hero{position:relative;background:radial-gradient(1200px 600px at 85% 10%,#14508f 0%,transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-120px;top:50%;width:620px;height:620px;transform:translateY(-50%);background:url(logo-white.png) center/contain no-repeat;opacity:.07;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,72px);align-items:center;padding-top:clamp(48px,6vw,88px);padding-bottom:clamp(48px,6vw,88px)}
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;background:#ffffff14;border:1px solid #ffffff26;font-size:14px;font-weight:600;color:#cfe3f7;margin-bottom:22px}
+.kicker i{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px #4ade8033}
+.hero h1 span{color:var(--sky)}
+.hero .lead{font-size:18px;color:#c4d6ea;max-width:56ch;margin:18px 0 26px}
+.checks{list-style:none;padding:0;margin:0 0 32px;display:grid;gap:10px}
+.checks li{display:flex;gap:12px;align-items:flex-start;color:#e3edf8}.checks svg{color:var(--sky);margin-top:3px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:44px;padding-top:28px;border-top:1px solid #ffffff1f;max-width:600px}
+.stats b{display:block;font-size:clamp(26px,3vw,34px);font-weight:800;line-height:1}.stats span{font-size:14px;color:#a9c0d8}
+.formcard{background:#fff;color:#0d1b2a;border-radius:20px;padding:30px;box-shadow:0 30px 80px #00000055}
+.formcard h3{font-size:22px;margin-bottom:6px}.formcard>p{color:#5a6b7f;font-size:15px}
+.formcard form{display:grid;gap:12px;position:relative}
+input,select,textarea{width:100%;min-height:52px;padding:12px 16px;border:1px solid #d5e1ee;border-radius:12px;background:#f7fafd;color:#0d1b2a;font:500 16px Manrope,sans-serif;transition:border-color .2s,background .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);background:#fff;outline:none;box-shadow:0 0 0 4px #0c61ab1f}
+.formcard .btn{width:100%}
+.fine{font-size:12.5px;color:#7a8a9c;margin:0}
+.or{display:flex;gap:10px}.or a{flex:1;display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:46px;border-radius:12px;border:1px solid #d5e1ee;color:#0d1b2a;text-decoration:none;font-weight:700;font-size:15px}.or a:hover{border-color:var(--blue);color:var(--blue)}
+
+/* полоса доверия */
+.trust{border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-top:30px;padding-bottom:30px}
+.trust div{display:flex;gap:14px;align-items:center;font-weight:600;font-size:15px}
+.trust .b{width:46px;height:46px;border-radius:12px;background:var(--ice);color:var(--blue);display:grid;place-items:center;flex:none}
+
+/* услуги */
+.tabs{display:inline-flex;padding:5px;border-radius:14px;background:var(--ice);border:1px solid var(--line);margin-bottom:28px;flex-wrap:wrap}
+.tabs button{min-height:44px;padding:0 22px;border-radius:10px;border:0;background:none;color:var(--mute);font:700 15px Manrope,sans-serif;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--card);color:var(--blue);box-shadow:0 4px 14px #0a2a4d14}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.svc:hover{transform:translateY(-4px);box-shadow:0 20px 44px #0a2a4d1a}
+.svc .ph{aspect-ratio:16/9;background:linear-gradient(135deg,#0c61ab 0%,#0a2a4d 100%);position:relative;display:grid;place-items:center;color:#ffffffd9}
+.svc .ph svg{width:46px;height:46px;stroke-width:1.5}
+.svc .ph::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,#ffffff08 0 12px,transparent 12px 24px)}
+.svc .body{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.svc p{margin:0;color:var(--mute);font-size:15px;flex:1}
+.svc .foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:14px;border-top:1px solid var(--line)}
+.svc .pr{font-weight:800;white-space:nowrap}.svc .pr small{font-weight:500;color:var(--mute)}
+.svc a{font-weight:700;text-decoration:none;font-size:15px;display:inline-flex;align-items:center;gap:6px}
+
+/* этапы */
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;position:relative}
+.steps li::before{content:"0" counter(s);font-size:44px;font-weight:800;color:var(--blue);opacity:.16;position:absolute;right:20px;top:12px;line-height:1}
+.steps .b{width:48px;height:48px;border-radius:14px;background:var(--blue);color:#fff;display:grid;place-items:center;margin-bottom:18px}
+.steps p{color:var(--mute);font-size:15px;margin:0}
+
+/* почему мы */
+.why{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff}
+.why .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.why .head p{color:#a9c0d8}.why .head h2{margin-bottom:16px}
+.feat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.feat div{background:#ffffff0d;border:1px solid #ffffff1a;border-radius:16px;padding:22px}
+.feat svg{color:var(--sky);width:26px;height:26px;margin-bottom:12px}.feat h3{font-size:17px}.feat p{color:#a9c0d8;font-size:15px;margin:0}
+
+/* отзывы */
+.rating{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 18px;text-decoration:none;color:var(--ink)}
+.rating b{font-size:15px}.rating span{color:var(--mute);font-size:14px}
+.ya{width:36px;height:36px;border-radius:50%;background:#fc3f1d;color:#fff;display:grid;place-items:center;font-weight:800}
+.rev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.rev article{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column}
+.stars{color:#f5a623;letter-spacing:3px;font-size:17px;margin-bottom:12px}
+.rev p{flex:1;font-size:16px}.rev small{color:var(--mute);font-size:13px}
+
+/* галерея */
+.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:200px;gap:14px}
+.gal figure{margin:0;border-radius:16px;overflow:hidden;position:relative;background:linear-gradient(135deg,light-dark(#dbe8f5,#123257),light-dark(#c3d7ec,#0c2442))}
+.gal figure:first-child{grid-column:span 2;grid-row:span 2}
+.gal figure svg{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:40px;height:40px;color:light-dark(#7d9cbd,#5d7fa5);stroke-width:1.5}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;font-size:14px;font-weight:600;color:#fff;background:linear-gradient(transparent,#0a2a4dcc)}
+
+/* цены */
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.price{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.price.hot{background:var(--blue);color:#fff;border-color:var(--blue)}
+.price .sum{font-size:38px;font-weight:800;line-height:1;white-space:nowrap}.price .sum small{font-size:16px;font-weight:600;opacity:.7}
+.price p{color:var(--mute);font-size:15px;flex:1;margin:0}.price.hot p{color:#d6e7f8}
+.price .btn{margin-top:8px}.price.hot .btn{background:#fff;color:var(--blue)}
+.pnote{color:var(--mute);font-size:14px;margin-top:18px}
+
+/* faq + заявка */
+.faq{max-width:860px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;font-size:17px;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:26px;font-weight:400;color:var(--blue);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mute);padding-bottom:20px;margin:0}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.clist{display:grid;gap:14px;margin-top:26px}
+.clist a,.clist div{display:flex;gap:14px;align-items:center;color:var(--ink);text-decoration:none;font-weight:600}
+.clist .b{width:46px;height:46px;border-radius:12px;background:var(--ice);color:var(--blue);display:grid;place-items:center;flex:none}
+.clist small{display:block;color:var(--mute);font-weight:500;font-size:13px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#5a6b7f}.chk input{width:20px;min-height:20px;height:20px;margin-top:2px;accent-color:var(--blue)}
+.ok{background:#e8f7ee;color:#136c35;padding:14px 16px;border-radius:12px;font-weight:600;font-size:15px}
+.err{border-color:#e0453a!important;box-shadow:0 0 0 4px #e0453a22!important}
+
+/* подвал */
+footer{background:var(--navy2);color:#94abc4;font-size:14px;padding:64px 0 28px}
+footer a{color:#cfdfef;text-decoration:none}footer a:hover{color:#fff}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.fcols h4{color:#fff;font-size:15px;margin:0 0 14px}.fcols ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.fbrand{display:flex;gap:12px;align-items:center;margin-bottom:14px}.fbrand img{width:46px;height:46px;border-radius:50%;background:#fff}.fbrand b{color:#fff;font-size:17px;letter-spacing:.04em}
+.fbot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:44px;padding-top:22px;border-top:1px solid #ffffff14;font-size:13px}
+
+@media(max-width:1000px){.links{display:none}.hero .wrap,.why .wrap,.contact .wrap{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.trust .wrap{grid-template-columns:1fr 1fr}.rev,.prices{grid-template-columns:1fr}.fcols{grid-template-columns:1fr 1fr}.gal{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.top .hide,.top .msg{display:none}.top .wrap{justify-content:center}.nav{gap:12px;min-height:64px}.brand small{display:none}.brand img{width:42px;height:42px}.city>button span{max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.city .menu{position:fixed;left:12px;right:12px;top:110px;width:auto;grid-template-columns:1fr 1fr;max-height:70vh;overflow:auto}
+.steps,.feat,.row,.fcols{grid-template-columns:1fr}.trust .wrap{grid-template-columns:1fr}.formcard{padding:22px}.gal{grid-auto-rows:150px}.stats{gap:12px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+ <symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+ <symbol id="tg" viewBox="0 0 24 24"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z"/><path d="m9 13 8-6"/></symbol>
+ <symbol id="wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"/></symbol>
+ <symbol id="mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+ <symbol id="check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+ <symbol id="scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></symbol>
+ <symbol id="book" viewBox="0 0 24 24"><path d="M4 4h6a3 3 0 0 1 2 1 3 3 0 0 1 2-1h6v15h-6a2 2 0 0 0-2 2 2 2 0 0 0-2-2H4z"/></symbol>
+ <symbol id="car" viewBox="0 0 24 24"><path d="M3 13l2-5h14l2 5v5H3zM7 18v2M17 18v2M6 13h12"/></symbol>
+ <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+ <symbol id="doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></symbol>
+ <symbol id="cam" viewBox="0 0 24 24"><path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+ <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+ <symbol id="ruler" viewBox="0 0 24 24"><path d="M3 17 17 3l4 4L7 21z"/><path d="m7 13 2 2M10 10l2 2M13 7l2 2"/></symbol>
+ <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+</svg>
+
+<div class="top"><div class="wrap">
+  <span class="hide">Независимая экспертиза с 2019 года</span>
+  <span class="sp"></span>
+  <a class="msg" href="https://wa.me/79782152598" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>WhatsApp</a>
+  <a class="msg" href="https://t.me/VdovikovZen" target="_blank" rel="noopener"><svg class="i"><use href="#tg"/></svg>Telegram</a>
+  <a href="tel:+79782152598"><svg class="i"><use href="#phone"/></svg>+7 978 215-25-98</a>
+</div></div>
+
+<header><div class="wrap nav">
+  <a class="brand" href="#top"><img src="logo.png" alt="Эмблема Севтехэксперт"><span><b>СЕВТЕХЭКСПЕРТ</b><small>Независимая экспертиза</small></span></a>
+  <nav class="links"><a href="#services">Услуги</a><a href="#steps">Как работаем</a><a href="#prices">Цены</a><a href="#reviews">Отзывы</a><a href="#contact">Контакты</a></nav>
+  <div class="city" id="city">
+    <button type="button" id="cityBtn" aria-haspopup="true" aria-expanded="false"><svg class="i"><use href="#pin"/></svg><span id="cityName">Севастополь</span></button>
+    <div class="menu" id="cityMenu"></div>
+  </div>
+</div></header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker"><i></i>Принимаем заявки <span id="kCity">в Севастополе</span></span>
+      <h1>Независимая экспертиза <span id="heroCity">в Севастополе</span> для суда и претензии</h1>
+      <p class="lead">Строительная экспертиза и автоэкспертиза: определяем причину повреждений и считаем ущерб. Заключение со ссылками на СП и ГОСТ, которое работает в суде.</p>
+      <ul class="checks">
+        <li><svg class="i"><use href="#check"/></svg>Выезд эксперта на осмотр, фотофиксация и замеры</li>
+        <li><svg class="i"><use href="#check"/></svg>Смета восстановительного ремонта по рыночным ценам</li>
+        <li><svg class="i"><use href="#check"/></svg>Эксперт даёт пояснения в суде по своему заключению</li>
+      </ul>
+      <div class="cta"><a class="btn light" href="#contact">Рассчитать стоимость <svg class="i"><use href="#arrow"/></svg></a><a class="btn line" href="https://wa.me/79782152598" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg>Написать в WhatsApp</a></div>
+      <div class="stats"><div><b>с 2019</b><span>года на рынке</span></div><div><b>1000+</b><span>экспертиз проведено</span></div><div><b>1 день</b><span>экспресс-расчёт по ДТП</span></div></div>
+    </div>
+    <div class="formcard">
+      <h3>Бесплатная консультация</h3>
+      <p>Оставьте телефон — эксперт перезвонит, разберёт ситуацию и назовёт цену.</p>
+      <form id="quick" novalidate><input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+        <input name="name" placeholder="Ваше имя" autocomplete="name">
+        <input name="phone" type="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+        <select name="type" class="fType" aria-label="Вид экспертизы"></select>
+        <button class="btn" type="submit">Получить консультацию</button>
+        <p class="fine">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</p>
+        <div class="fmsg" hidden></div>
+      </form>
+      <div class="or" style="margin-top:14px"><a href="https://t.me/VdovikovZen" target="_blank" rel="noopener"><svg class="i"><use href="#tg"/></svg>Telegram</a><a href="tel:+79782152598"><svg class="i"><use href="#phone"/></svg>Позвонить</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust"><div class="wrap">
+  <div><span class="b"><svg class="i"><use href="#scale"/></svg></span>Заключения для суда</div>
+  <div><span class="b"><svg class="i"><use href="#book"/></svg></span>Ссылки на СП, ГОСТ, ГК РФ</div>
+  <div><span class="b"><svg class="i"><use href="#ruler"/></svg></span>Выезд эксперта на объект</div>
+  <div><span class="b"><svg class="i"><use href="#shield"/></svg></span>Договор и закрывающие документы</div>
+</div></section>
+
+<section class="band" id="services"><div class="wrap">
+  <div class="head"><h2>Виды экспертиз</h2><p>Проводим строительно-технические экспертизы и автоэкспертизы <span class="inCity">в Севастополе</span> и по всему региону.</p></div>
+  <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-t="build">Строительная экспертиза</button><button role="tab" aria-selected="false" data-t="auto">Автоэкспертиза</button></div>
+  <div class="grid" id="svcGrid"></div>
+</div></section>
+
+<section class="band ice" id="steps"><div class="wrap">
+  <div class="head"><h2>Как проходит экспертиза</h2><p>Четыре шага от звонка до готового заключения.</p></div>
+  <ol class="steps">
+    <li><div class="b"><svg class="i"><use href="#phone"/></svg></div><h3>Заявка</h3><p>Описываете ситуацию, присылаете фото. Называем стоимость и сроки.</p></li>
+    <li><div class="b"><svg class="i"><use href="#cam"/></svg></div><h3>Осмотр</h3><p>Договор, выезд эксперта, замеры и фотофиксация, уведомляем вторую сторону.</p></li>
+    <li><div class="b"><svg class="i"><use href="#doc"/></svg></div><h3>Заключение</h3><p>Причины повреждений, смета ущерба, ссылки на нормы. Для претензии и суда.</p></li>
+    <li><div class="b"><svg class="i"><use href="#scale"/></svg></div><h3>Сопровождение</h3><p>При необходимости эксперт даёт пояснения в суде.</p></li>
+  </ol>
+</div></section>
+
+<section class="band why"><div class="wrap">
+  <div class="head" style="display:block"><h2>Почему нам доверяют</h2><p>Заключение готовит эксперт, который не заинтересован в исходе спора и опирается только на факты осмотра и нормы.</p><a class="btn light" href="#contact" style="margin-top:18px">Обсудить ваш случай</a></div>
+  <div class="feat">
+    <div><svg class="i"><use href="#scale"/></svg><h3>Работаем на суд</h3><p>Заключения оформляем так, чтобы их принимали как доказательство.</p></div>
+    <div><svg class="i"><use href="#book"/></svg><h3>Опора на нормы</h3><p>Каждый дефект привязан к конкретному пункту СП или ГОСТ.</p></div>
+    <div><svg class="i"><use href="#doc"/></svg><h3>Честная смета</h3><p>Стоимость ремонта по рыночным ценам вашего города.</p></div>
+    <div><svg class="i"><use href="#clock"/></svg><h3>Быстро</h3><p>Экспресс-расчёт по ДТП за 1 день, выезд на осмотр в удобное время.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="reviews"><div class="wrap">
+  <div class="head"><h2>Отзывы клиентов</h2><a class="rating" href="https://yandex.ru/maps/org/sevtehexpert/113484322220/" target="_blank" rel="noopener"><span class="ya">Я</span><span><b>12 отзывов на Яндекс Картах</b><br><span>Читать все отзывы</span></span></a></div>
+  <div class="rev">
+    <article><div class="stars">★★★★★</div><p>Заключение по строительной экспертизе приняли в суде, эксперт был готов выступить и пояснить отчёт.</p><small>Яндекс Карты · краткий пересказ отзыва</small></article>
+    <article><div class="stars">★★★★★</div><p>Помогли в сложном споре с недобросовестным подрядчиком, работали грамотно и оперативно.</p><small>Яндекс Карты · краткий пересказ отзыва</small></article>
+    <article><div class="stars">★★★★★</div><p>Всё сделали в срок и качественно, результат превзошёл ожидания.</p><small>Яндекс Карты · краткий пересказ отзыва</small></article>
+  </div>
+</div></section>
+
+<section class="band ice"><div class="wrap">
+  <div class="head"><h2>С наших осмотров</h2><p>Реальные дефекты, которые мы фиксировали на объектах.</p></div>
+  <div class="gal" id="gal"></div>
+</div></section>
+
+<section class="band" id="prices"><div class="wrap">
+  <div class="head"><h2>Стоимость</h2><p>Точная цена зависит от площади объекта, удалённости и вопросов к эксперту — назовём её после короткого разговора.</p></div>
+  <div class="prices">
+    <div class="price"><h3>Экспресс-расчёт ДТП</h3><div class="sum">1 000 <small>₽</small></div><p>Предварительная стоимость ремонта автомобиля по фото за один день.</p><a class="btn" href="#contact" data-pick="Экспресс-расчёт ущерба">Заказать</a></div>
+    <div class="price hot"><h3>Экспертиза после залива</h3><div class="sum">18 000 <small>₽</small></div><p>Осмотр, причина залива, смета восстановительного ремонта для иска к УК или соседям. Также после пожара.</p><a class="btn" href="#contact" data-pick="Экспертиза после залива">Заказать</a></div>
+    <div class="price"><h3>Автоэкспертиза после ДТП</h3><div class="sum">7 000 <small>₽</small></div><p>Независимая оценка ущерба для страховой компании или суда.</p><a class="btn" href="#contact" data-pick="Ущерб после ДТП">Заказать</a></div>
+  </div>
+  <p class="pnote">Экспертиза ремонта, кровли, фасада, приёмка квартиры, УТС и годные остатки — стоимость по запросу.</p>
+</div></section>
+
+<section class="band ice" id="faq"><div class="wrap faq">
+  <div class="head"><h2>Частые вопросы</h2></div>
+  <details><summary>Примет ли суд ваше заключение?</summary><p>Заключение специалиста — письменное доказательство по делу. Мы оформляем его со ссылками на нормы и фотофиксацией, а эксперт может дать пояснения в суде.</p></details>
+  <details><summary>Что делать сразу после залива?</summary><p>Сфотографировать повреждения, вызвать управляющую компанию для составления акта и не начинать ремонт до осмотра экспертом.</p></details>
+  <details><summary>Нужно ли приглашать виновника на осмотр?</summary><p>Да, вторую сторону желательно уведомить заранее — телеграммой или письмом. Подскажем, как это сделать правильно.</p></details>
+  <details><summary>Чем УТС отличается от стоимости ремонта?</summary><p>Стоимость ремонта — расходы на восстановление автомобиля. УТС — снижение его рыночной стоимости из-за аварии и ремонта, оно взыскивается отдельно.</p></details>
+  <details><summary>Работаете ли вы в моём городе?</summary><p>Выберите город в шапке сайта. Если вашего города нет в списке, напишите — подскажем, возможен ли выезд.</p></details>
+</div></section>
+
+<section class="band contact" id="contact"><div class="wrap">
+  <div>
+    <h2>Расскажите о ситуации</h2>
+    <p style="color:var(--mute);font-size:17px">Перезвоним, уточним детали и назовём стоимость. Можно сразу написать в мессенджер и прислать фото повреждений.</p>
+    <div class="clist">
+      <a href="tel:+79782152598"><span class="b"><svg class="i"><use href="#phone"/></svg></span><span>+7 978 215-25-98<small>Телефон и WhatsApp</small></span></a>
+      <a href="https://t.me/VdovikovZen" target="_blank" rel="noopener"><span class="b"><svg class="i"><use href="#tg"/></svg></span><span>@VdovikovZen<small>Telegram</small></span></a>
+      <a href="mailto:vdovikov001@gmail.com"><span class="b"><svg class="i"><use href="#mail"/></svg></span><span>vdovikov001@gmail.com<small>Почта</small></span></a>
+      <div><span class="b"><svg class="i"><use href="#pin"/></svg></span><span>Севастополь, проспект Нахимова, 15<small>Офис</small></span></div>
+    </div>
+  </div>
+  <div class="formcard" style="box-shadow:0 20px 60px #0a2a4d1f;border:1px solid var(--line)">
+    <h3>Заявка на экспертизу</h3>
+    <form id="lead" novalidate><input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <div class="row"><input name="name" placeholder="Имя" autocomplete="name"><input name="phone" type="tel" placeholder="Телефон" required autocomplete="tel"></div>
+      <div class="row"><select name="city" id="fCity" aria-label="Город"></select><select name="type" class="fType" aria-label="Вид экспертизы"></select></div>
+      <textarea name="msg" rows="4" placeholder="Коротко о ситуации: например, затопили соседи сверху, пострадали потолок и ламинат"></textarea>
+      <label class="chk"><input type="checkbox" name="agree"> Согласен на обработку персональных данных</label>
+      <button class="btn" type="submit">Отправить заявку</button>
+      <div class="fmsg" hidden></div>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div><div class="fbrand"><img src="logo.png" alt=""><b>СЕВТЕХЭКСПЕРТ</b></div><p>Независимая строительно-техническая экспертиза и автоэкспертиза с 2019 года.</p><p>ООО «Севтехэксперт»<br>ИНН / ОГРН</p></div>
+    <div><h4>Крым</h4><ul id="f0"></ul></div>
+    <div><h4>Краснодарский край</h4><ul id="f1"></ul></div>
+    <div><h4>Москва и Петербург</h4><ul id="f2"></ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 ООО «Севтехэксперт»</span><span><a href="#">Политика конфиденциальности</a> · <a href="https://dzen.ru/sevtehexp" target="_blank" rel="noopener">Мы на Дзене</a></span></div>
+</div></footer>
+
+<script>
+{
+const GROUPS=['Крым','Краснодарский край','Москва и Петербург'];
+const CITIES=[
+ [0,'sevastopol','Севастополь','в Севастополе'],[0,'simferopol','Симферополь','в Симферополе'],[0,'yalta','Ялта','в Ялте'],[0,'gurzuf','Гурзуф','в Гурзуфе'],[0,'alushta','Алушта','в Алуште'],[0,'evpatoriya','Евпатория','в Евпатории'],[0,'feodosiya','Феодосия','в Феодосии'],[0,'kerch','Керчь','в Керчи'],
+ [1,'sochi','Сочи','в Сочи'],[1,'anapa','Анапа','в Анапе'],[1,'gelendzhik','Геленджик','в Геленджике'],[1,'krasnodar','Краснодар','в Краснодаре'],
+ [2,'moskva','Москва','в Москве'],[2,'spb','Санкт-Петербург','в Санкт-Петербурге']];
+const SVC={build:[
+ ['Экспертиза после залива','Причина залива и стоимость восстановительного ремонта для претензии к УК или соседям.','18 000','M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z'],
+ ['Экспертиза после строителей','Некачественный ремонт: дефекты, сравнение с договором и нормами, стоимость устранения.','','M3 21h18M6 21V9l6-5 6 5v12M10 21v-6h4v6'],
+ ['Экспертиза кровли','Протечки, нарушения технологии монтажа, состояние покрытия и водостоков.','','M2 12 12 3l10 9M5 10v10h14V10'],
+ ['Экспертиза фасада','Трещины, отслоение штукатурки и облицовки, ошибки утепления.','','M4 3h16v18H4zM4 9h16M4 15h16M10 3v18'],
+ ['Экспертиза стен и перекрытий','Трещины, отклонения от вертикали, промерзание, плесень.','','M3 3h18v18H3zM9 3v18M3 12h18'],
+ ['Экспертиза пола','Стяжка, ламинат, плитка: перепады, вздутие, пустоты — замеры по СП.','','M3 17h18M3 21h18M6 17l3-10h6l3 10'],
+ ['Приёмка квартиры','Проверка отделки и инженерных систем до подписания акта с застройщиком.','','M9 12l2 2 4-4M4 4h16v16H4z'],
+ ['Ущерб после пожара','Оценка повреждений конструкций и отделки, смета восстановления.','18 000','M12 2c3 4 5 6 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9z']],
+auto:[
+ ['Ущерб после ДТП','Независимая оценка стоимости восстановительного ремонта для страховой или суда.','7 000','M3 13l2-5h14l2 5v5H3zM7 18v2M17 18v2M6 13h12'],
+ ['Экспресс-расчёт ущерба','Предварительный расчёт стоимости ремонта по фото за один день.','1 000','M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M12 7v5l3 3'],
+ ['Утрата товарной стоимости','Насколько авария снизила рыночную стоимость автомобиля (УТС).','','M4 18 10 12l4 4 6-8M14 8h6v6'],
+ ['Годные остатки','Стоимость остатков при полной гибели автомобиля для расчёта выплаты.','','M4 7h16v10H4zM8 7V5h8v2'],
+ ['Рыночная стоимость авто','Доаварийная стоимость автомобиля для расчёта полной гибели.','','M12 3v18M7 8h7a3 3 0 0 1 0 6H8'],
+ ['Рецензия на расчёт страховой','Проверяем расчёт страховой компании и находим занижения.','','M5 3h10l4 4v14H5zM9 13h6M9 17h4']]};
+const GAL=['Залив: потолок и стены после протечки','Вздутие ламината','Трещина в несущей стене','Отслоение штукатурки фасада','Протечка кровли','Ущерб после ДТП'];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const ic=d=>`<svg class="i" viewBox="0 0 24 24"><path d="${d}"/></svg>`;
+
+/* города */
+$('#cityMenu').innerHTML=GROUPS.map((g,gi)=>`<div><h4>${g}</h4>`+CITIES.filter(c=>c[0]===gi).map(c=>`<button type="button" data-c="${c[1]}">${c[2]}</button>`).join('')+'</div>').join('');
+$('#fCity').innerHTML=CITIES.map(c=>`<option value="${c[1]}">${c[2]}</option>`).join('');
+GROUPS.forEach((g,gi)=>$('#f'+gi).innerHTML=CITIES.filter(c=>c[0]===gi).map(c=>`<li><a href="#" data-c="${c[1]}">Экспертиза ${c[3]}</a></li>`).join(''));
+let cur=CITIES[0];try{const f=CITIES.find(c=>c[1]===localStorage.getItem('city'));if(f)cur=f}catch(e){}
+function setCity(c){cur=c;$('#cityName').textContent=c[2];['#heroCity','#kCity'].forEach(s=>$(s).textContent=c[3]);$$('.inCity').forEach(e=>e.textContent=c[3]);
+ $('#fCity').value=c[1];document.title='Независимая экспертиза '+c[3]+' — Севтехэксперт';
+ $$('#cityMenu button').forEach(b=>b.setAttribute('aria-current',b.dataset.c===c[1]));try{localStorage.setItem('city',c[1])}catch(e){}}
+setCity(cur);
+const box=$('#city'),cb=$('#cityBtn');
+const close=()=>{box.classList.remove('open');cb.setAttribute('aria-expanded','false')};
+cb.addEventListener('click',()=>{const o=box.classList.toggle('open');cb.setAttribute('aria-expanded',o)});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-c]');
+ if(b){e.preventDefault();setCity(CITIES.find(c=>c[1]===b.dataset.c));close();if(b.tagName==='A')scrollTo({top:0})}
+ else if(!box.contains(e.target))close();
+ const p=e.target.closest('[data-pick]');if(p)$$('.fType').forEach(s=>s.value=p.dataset.pick)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+
+/* услуги */
+function renderSvc(t){$('#svcGrid').innerHTML=SVC[t].map(s=>`<article class="svc"><div class="ph">${ic(s[3])}</div><div class="body"><h3>${s[0]}</h3><p>${s[1]}</p><div class="foot"><span class="pr">${s[2]?'от '+s[2]+' ₽':'<small>Цена по запросу</small>'}</span><a href="#contact" data-pick="${s[0]}">Заказать ${ic('M5 12h14M13 6l6 6-6 6')}</a></div></div></article>`).join('')}
+renderSvc('build');
+$$('.tabs button').forEach(b=>b.addEventListener('click',()=>{$$('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));renderSvc(b.dataset.t)}));
+const types=[...SVC.build,...SVC.auto].map(s=>s[0]);
+$$('.fType').forEach(s=>s.innerHTML='<option value="">Вид экспертизы</option>'+types.map(t=>`<option>${t}</option>`).join('')+'<option>Другое</option>');
+
+/* галерея: места под фото */
+$('#gal').innerHTML=GAL.map(g=>`<figure><svg class="i" viewBox="0 0 24 24"><use href="#cam"/></svg><figcaption>${g}</figcaption></figure>`).join('');
+
+/* Заявки идут прямо в Telegram через отдельного бота для сайта.
+   TG_TOKEN — токен нового бота от @BotFather, TG_CHAT — ваш chat_id. */
+const TG_TOKEN='ВСТАВИТЬ_ТОКЕН_БОТА';
+const TG_CHAT='670836035';
+async function send(d){
+ if(d.website)return true;
+ const text=['📩 Заявка с сайта Севтехэксперт','Телефон: '+d.phone,d.name&&'Имя: '+d.name,'Город: '+d.city,d.type&&'Экспертиза: '+d.type,d.msg&&'Сообщение: '+d.msg].filter(Boolean).join('\n');
+ try{await fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage',{method:'POST',mode:'no-cors',body:new URLSearchParams({chat_id:TG_CHAT,text})});return true}
+ catch(e){return false}}
+const okPhone=v=>v.replace(/\D/g,'').length>=10;
+const flag=el=>{el.classList.add('err');setTimeout(()=>el.classList.remove('err'),2500)};
+function wire(id){const f=$(id);f.addEventListener('submit',async e=>{e.preventDefault();
+ if(!okPhone(f.phone.value))return flag(f.phone);
+ if(f.agree&&!f.agree.checked)return flag(f.agree);
+ const btn=f.querySelector('button[type=submit]'),label=btn.textContent;btn.disabled=true;btn.textContent='Отправляем…';
+ const d={website:f.website.value,name:f.name.value,phone:f.phone.value,type:f.type.value,city:cur[2],msg:f.msg?f.msg.value:'',page:location.pathname};
+ const r=await send(d);const m=f.querySelector('.fmsg');m.hidden=false;m.className='fmsg ok';
+ m.textContent=r?'Спасибо! Заявка отправлена, эксперт скоро свяжется с вами.':'Не получилось отправить. Позвоните или напишите в WhatsApp: +7 978 215-25-98';
+ btn.disabled=false;btn.textContent=label;if(r){f.reset();setCity(cur)}})}
+wire('#quick');wire('#lead');
+}
+</script>
+</body>
+</html>
