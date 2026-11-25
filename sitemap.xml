@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://sevtehexpert.ru/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://sevtehexpert.ru/</loc><priority>1.0</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/</loc><priority>0.8</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/sudebnaya-i-dosudebnaya-ekspertiza/</loc><lastmod>2024-11-10</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/nezavisimaya-stroitelno-tehnicheskaya-ekspertiza/</loc><lastmod>2024-11-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/zalili-sosedi-sverhu-chto-delat/</loc><lastmod>2024-06-29</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/stroitelnaya-ekspertiza-anapa/</loc><lastmod>2024-05-14</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/ekspertiza-pereplanirovki-kvartiry/</loc><lastmod>2024-03-18</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/stroitelnaya-ekspertiza-krasnodar/</loc><lastmod>2024-03-18</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/stroitelnaya-ekspertiza-sevastopol-krym/</loc><lastmod>2024-02-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/stroitelno-tehnicheskaya-ekspertiza-sevastopol/</loc><lastmod>2024-02-15</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/ocenka-ushcherba-kvartiry-posle-zaliva/</loc><lastmod>2023-12-28</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/chto-delat-pri-dtp/</loc><lastmod>2023-12-28</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/ekspertiza-kvartiry-posle-zaliva/</loc><lastmod>2023-12-27</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/kak-proverit-stoimost-zapchastey-po-rsa/</loc><lastmod>2023-12-27</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/zachem-nezavisimaya-ekspertiza-posle-dtp/</loc><lastmod>2023-12-27</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sevtehexpert.ru/blog/kak-strahovye-zanizhayut-ushcherb/</loc><lastmod>2018-06-17</lastmod><priority>0.7</priority></url>
 </urlset>
